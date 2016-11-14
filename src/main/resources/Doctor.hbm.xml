@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.gonicollazo.raulTarea5.Models">
+
+	<class name="Doctor" table="doctor">
+		<id name="id" column="idDoctor">
+			<generator class="identity" />
+		</id>
+		<property name="name" />
+		<property name="area" />
+		<list name="patient" cascade="all">
+			<key column="iddoctor" />
+			<index column="patient_order" />
+			<one-to-many class="Patient" />
+		</list>
+
+	</class>
+
+</hibernate-mapping>
